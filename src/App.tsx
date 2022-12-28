@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { FC, useRef } from 'react'
-import useFollowMouse from './assets/useFollowMouse'
+import useFollowMouse from './hooks/useFollowMouse'
 import Header from './components/Header'
 import Hero from './sections/Hero'
 
