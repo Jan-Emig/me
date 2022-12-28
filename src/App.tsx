@@ -1,44 +1,28 @@
-import { AbsoluteCenter, chakra, shouldForwardProp } from '@chakra-ui/react'
-import useMouse from '@react-hook/mouse-position'
-import { isValidMotionProp, motion, useMotionValue, useSpring } from 'framer-motion'
-import { FC, useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
+import { FC, useRef } from 'react'
+import useFollowMouse from './assets/useFollowMouse'
 import Header from './components/Header'
 import Hero from './sections/Hero'
 
-const MotionBox = chakra(motion.div, {
-  shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop)
-});
-
 const App: FC = () => {
-  const ref = useRef(null);
-  const mouse = useMouse(ref, {
-    fps: 60,
-    enterDelay: 0,
-    leaveDelay: 0,
-  })
-  const delayedMouse = useMouse(ref, {
-    fps: 60,
-    enterDelay: 100,
-    leaveDelay: 100,
-  });
-  
-  let mouseX = 0, mouseY = 0;
-  const blured = mouse.x === null && mouse.y === null;
-  if (mouse.x !== null) mouseX = mouse.x;
-  if (mouse.y !== null) mouseY = mouse.y;
+  const ref = useRef<HTMLDivElement>(null);
+  const { x, y } = useFollowMouse(ref);
 
   return (
-    <div className="App" style={{ position: 'absolute', margin: 0, width: '100vw', height: '100vh' }} ref={ref}>
+    <div 
+      ref={ref}
+      className="App"
+      style={{ position: 'absolute', margin: 0, width: '100vw', height: '100vh' }}
+    >
       <Header />
       <Hero />
       <motion.div
+        animate={{ x, y }}
         style={{
-          opacity: blured ? 0 : 1,
-          position: 'absolute',
+          position: 'fixed',
+          pointerEvents: 'none',
           top: 0,
           left: 0,
-          y: mouseY,
-          x: mouseX,
           width: 20,
           height: 20,
           borderRadius: '50%',
@@ -48,11 +32,10 @@ const App: FC = () => {
         }}
         transition={{ 
           type: "spring",
+          damping: 30,
           stiffness: 500,
-          damping: 28,
-          mass: 0.5
-         }}
-         animate={'default'}
+          restDelta: 0.001
+        }}
       >
         <div
           style={{
