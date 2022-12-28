@@ -48,6 +48,13 @@ const theme = extendTheme({
             800: '#0F8554',
             900: '#0E6C4F',
         }
+    },
+    breakpoints: {
+        'hero_sx': '768px',
+        'hero_sm': '953px',
+        'hero_md': '1071px',
+        'hero_lg': '1445px',
+        '2xl': '1536px'
     }
 });
 
