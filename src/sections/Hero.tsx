@@ -25,7 +25,8 @@ const MouseIcon = createIcon({
         d="M4 8a8 8 0 1 1 16 0v8a8 8 0 1 1-16 0V8Zm14 0v8a6 6 0 0 1-12 0V8a6 6 0 1 1 12 0Z" clip-rule="evenodd" />
         </>
     )
-})
+});
+
 const SkillBox: FC<BoxProps & { name: string, size?: 'sm' | 'md' | 'lg'}> = ({name, size = 'md', ...props}) => {
     const getCompSize = (size: string) => {
         const sizes = { headingSize: 'md' }
@@ -60,7 +61,22 @@ const SkillBox: FC<BoxProps & { name: string, size?: 'sm' | 'md' | 'lg'}> = ({na
             }}
             {...props}
         >
-            <Heading size={headingSize}>{ name }</Heading>
+            <Heading 
+                position='relative'
+                size={headingSize}
+                _after={{ 
+                    content: '""',
+                    position: 'absolute',
+                    top: '0',
+                    left: '0',
+                    width: '110%',
+                    height: '110%',
+                    backgroundColor: 'brand.500',
+                    zIndex: -1,
+                    opacity: 0.3,
+                    filter: 'blur(20px)',
+                 }}
+            >{ name }</Heading>
         </Box>
     )
 };
