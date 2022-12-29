@@ -90,7 +90,7 @@ const HeroRight: FC = () => {
                 initial={{ opacity: 0, top: '100px' }}
                 whileInView={{ opacity: 1, top: 0 }}
                 transition={{ delay: 4 } as any}
-                mt={{ base: '2rem', hero_sm: '130px'}}
+                mt={{ base: '2rem', hero_sm: '180px'}}
                 w={{ base: '', hero_sx: '230px', hero_sm: 'fit-content' }}
             >
                 <Box
