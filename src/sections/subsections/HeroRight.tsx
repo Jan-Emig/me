@@ -4,6 +4,7 @@ import { FC } from "react";
 
 import HexagonMask from '/src/assets/hexagon_mask.svg';
 import FigureLottie from '../../assets/figure_lottie.json';
+import { MotionBox } from "../../components/motion";
 
 const skills = [ 'React', 'MySQL', 'Laravel', 'TypeScript' ].sort((a, b) => 0.5 - Math.random());
 
@@ -84,8 +85,11 @@ const HeroRight: FC = () => {
 
     const render = () => {
         return (
-            <Box 
+            <MotionBox 
                 position='relative'
+                initial={{ opacity: 0, top: '100px' }}
+                whileInView={{ opacity: 1, top: 0 }}
+                transition={{ delay: 4 } as any}
                 mt={{ base: '2rem', hero_sm: '130px'}}
                 w={{ base: '', hero_sx: '230px', hero_sm: 'fit-content' }}
             >
@@ -122,7 +126,7 @@ const HeroRight: FC = () => {
                             <Lottie animationData={FigureLottie} loop autoplay style={{ position: 'absolute', bottom: '-30px', left: '-430px', width: '1000px' }} />    
                     </Box>
                 </Box>
-            </Box>
+            </MotionBox>
         )
     }
 
