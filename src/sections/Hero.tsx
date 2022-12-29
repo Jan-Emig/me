@@ -51,7 +51,7 @@ const Hero: FC = () => {
                             duration: 5,
                             ease: 'easeInOut',
                             repeat: Infinity,
-                            repeatDelay: 14.8,
+                            repeatDelay: 14.4,
                             delay: 5,
                           } as any}
                     />
@@ -71,7 +71,7 @@ const Hero: FC = () => {
                             duration: 5,
                             ease: 'easeInOut',
                             repeat: Infinity,
-                            repeatDelay: 14.8,
+                            repeatDelay: 14.4,
                             delay: 9.8,
                           } as any}
                     />
@@ -91,7 +91,7 @@ const Hero: FC = () => {
                             duration: 5,
                             ease: 'easeInOut',
                             repeat: Infinity,
-                            repeatDelay: 14.8,
+                            repeatDelay: 14.4,
                             delay: 14.6,
                           } as any}
                     />
@@ -111,7 +111,7 @@ const Hero: FC = () => {
                             duration: 5,
                             ease: 'easeInOut',
                             repeat: Infinity,
-                            repeatDelay: 14.8,
+                            repeatDelay: 14.4,
                             delay: 19.4,
                           } as any}
                     />
