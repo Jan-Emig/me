@@ -42,7 +42,7 @@ const Hero: FC = () => {
                         w='10%'
                         maxW='50px'
                         h='1px'
-                        background='linear-gradient(90deg, rgba(29,209,161,1) 0%, rgba(0,0,0,0) 100%)' 
+                        background='linear-gradient(90deg, rgba(29,209,161,1) 0%, rgba(0,0,0,0) 100%)'
                         animate={{ 
                             left: ['100%', '0%'],
                             width: ['0%', '10%', '0%'],
@@ -54,6 +54,17 @@ const Hero: FC = () => {
                             repeatDelay: 14.4,
                             delay: 5,
                           } as any}
+                          _after={{ 
+                            content: '""',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '1px',
+                            background: 'linear-gradient(90deg, rgba(29,209,161,1) 0%, rgba(0,0,0,0) 100%)',
+                            borderRadius: 'full',
+                            filter: 'blur(10px)',
+                           }}
                     />
                     <MotionBox
                         position='absolute'
@@ -74,6 +85,17 @@ const Hero: FC = () => {
                             repeatDelay: 14.4,
                             delay: 9.8,
                           } as any}
+                          _after={{ 
+                            content: '""',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '1px',
+                            background: 'linear-gradient(90deg, rgba(29,209,161,1) 0%, rgba(0,0,0,0) 100%)',
+                            borderRadius: 'full',
+                            filter: 'blur(10px)',
+                           }}
                     />
                     <MotionBox
                         position='absolute'
@@ -94,6 +116,17 @@ const Hero: FC = () => {
                             repeatDelay: 14.4,
                             delay: 14.6,
                           } as any}
+                          _after={{ 
+                            content: '""',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '1px',
+                            background: 'linear-gradient(90deg, rgba(29,209,161,1) 0%, rgba(0,0,0,0) 100%)',
+                            borderRadius: 'full',
+                            filter: 'blur(10px)',
+                           }}
                     />
                     <MotionBox
                         position='absolute'
@@ -114,6 +147,17 @@ const Hero: FC = () => {
                             repeatDelay: 14.4,
                             delay: 19.4,
                           } as any}
+                          _after={{ 
+                            content: '""',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '1px',
+                            background: 'linear-gradient(90deg, rgba(29,209,161,1) 0%, rgba(0,0,0,0) 100%)',
+                            borderRadius: 'full',
+                            filter: 'blur(10px)',
+                           }}
                     />
                 </Box>
                 <Box 
